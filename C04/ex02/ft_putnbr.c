@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esduman <esduman@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 11:09:20 by esduman           #+#    #+#             */
-/*   Updated: 2025/04/26 00:51:42 by esduman          ###   ########.fr       */
+/*   Created: 2025/04/23 04:50:44 by esduman           #+#    #+#             */
+/*   Updated: 2025/04/23 04:53:25 by esduman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strstr(char *str, char *to_find)
+void	ft_putchar(char nbr)
 {
-	int	i;
-	int	j;
+	write(1, &nbr, 1);
+}
 
-	if (to_find[0] == '\0')
-		return str;
-
-	i = 0;
-	while(i < 0)
+void	ft_putnbr(int nb)
+{
+	if (nb == -2147483648)
+		write(1, "-2147483648", 11);
+	else if (nb < 0)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] && str[i + j] != '\0')
-			j++;
-		if(to_find[j] == '\0')
-			return &str[i];
-		i++;
+		ft_putchar('-');
+		ft_putnbr(-nb);
 	}
-	return (0);
+	else if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+		ft_putchar(nb + '0');
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char str[] = "TutorialsPoint";
-	char substr[] = "Point";
-	char *ret;
-
-	ret = ft_strstr(str, substr);
-
-	printf("%s\n", ret);
+	ft_putnbr(42);
 	return (0);
-}
+}*/

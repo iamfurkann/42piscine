@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esduman <esduman@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 07:24:41 by esduman           #+#    #+#             */
-/*   Updated: 2025/04/22 20:33:05 by esduman          ###   ########.fr       */
+/*   Created: 2025/04/23 04:58:47 by esduman           #+#    #+#             */
+/*   Updated: 2025/04/23 05:09:24 by esduman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strlen(char *str)
 {
-	int	i;
-	i = 0;
-	while (src[i] != '\0' && dest[i] != '\0' )
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	char src[] = {"merhaba"};
-	char dest[] = "aa";
-
-	printf("%s", ft_strcpy(dest, src));
+	if (argc > 0)
+	{
+		write(1, argv[0], ft_strlen(argv[0]));
+		write(1, "\n", 1);
+	}	
 	return (0);
 }

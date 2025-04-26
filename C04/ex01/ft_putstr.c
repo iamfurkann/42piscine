@@ -1,46 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esduman <esduman@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 11:09:20 by esduman           #+#    #+#             */
-/*   Updated: 2025/04/26 00:51:42 by esduman          ###   ########.fr       */
+/*   Created: 2025/04/23 04:47:40 by esduman           #+#    #+#             */
+/*   Updated: 2025/04/23 04:49:56 by esduman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strstr(char *str, char *to_find)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
-
-	if (to_find[0] == '\0')
-		return str;
 
 	i = 0;
-	while(i < 0)
-	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] && str[i + j] != '\0')
-			j++;
-		if(to_find[j] == '\0')
-			return &str[i];
-		i++;
-	}
-	return (0);
+	while (str[i])
+		write(1, &str[i++], 1);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char str[] = "TutorialsPoint";
-	char substr[] = "Point";
-	char *ret;
-
-	ret = ft_strstr(str, substr);
-
-	printf("%s\n", ret);
+	char str[] = "ft-putstr";
+	ft_putstr(str);
 	return (0);
-}
+}*/

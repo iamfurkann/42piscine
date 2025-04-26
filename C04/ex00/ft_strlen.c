@@ -1,46 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esduman <esduman@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 11:09:20 by esduman           #+#    #+#             */
-/*   Updated: 2025/04/26 00:51:42 by esduman          ###   ########.fr       */
+/*   Created: 2025/04/23 04:27:56 by esduman           #+#    #+#             */
+/*   Updated: 2025/04/23 04:29:54 by esduman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strstr(char *str, char *to_find)
+int	ft_strlen(char *str)
 {
-	int	i;
-	int	j;
+	int	len;
 
-	if (to_find[0] == '\0')
-		return str;
-
-	i = 0;
-	while(i < 0)
-	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] && str[i + j] != '\0')
-			j++;
-		if(to_find[j] == '\0')
-			return &str[i];
-		i++;
-	}
-	return (0);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
 }
 
-int	main(void)
+/*int	main(void)
 {
-	char str[] = "TutorialsPoint";
-	char substr[] = "Point";
-	char *ret;
+	char str[] = "abcd";
+	printf("%d", ft_strlen(str));
 
-	ret = ft_strstr(str, substr);
-
-	printf("%s\n", ret);
 	return (0);
-}
+}*/

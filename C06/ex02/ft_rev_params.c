@@ -1,46 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esduman <esduman@student.42istanbul.com.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 11:09:20 by esduman           #+#    #+#             */
-/*   Updated: 2025/04/26 00:51:42 by esduman          ###   ########.fr       */
+/*   Created: 2025/04/23 05:14:31 by esduman           #+#    #+#             */
+/*   Updated: 2025/04/26 13:46:37 by esduman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-char	*ft_strstr(char *str, char *to_find)
+int	main(int argc,char *argv[])
 {
 	int	i;
 	int	j;
 
-	if (to_find[0] == '\0')
-		return str;
-
-	i = 0;
-	while(i < 0)
+	i = argc - 1;
+	if (argc > 0)
 	{
-		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] && str[i + j] != '\0')
-			j++;
-		if(to_find[j] == '\0')
-			return &str[i];
-		i++;
+		while (i > 0)
+		{
+			j = 0;
+			while (argv[i][j])
+			{
+				write(1, &argv[i][j], 1);
+				j++;
+			}
+			write(1, "\n", 1);
+			i--;
+		}
 	}
 	return (0);
 }
 
-int	main(void)
-{
-	char str[] = "TutorialsPoint";
-	char substr[] = "Point";
-	char *ret;
-
-	ret = ft_strstr(str, substr);
-
-	printf("%s\n", ret);
-	return (0);
-}
