@@ -1,0 +1,63 @@
+ 1. Karakter Kontrol Fonksiyonları (Kolay Başlangıç)
+Bunlar basit if kontrolleri ile yapılır.
+Başlamak için çok iyi:
+
+Fonksiyonlar	Ne Kontrol Ediyor?
+ft_isalpha	Harf mi?
+ft_isdigit	Rakam mı?
+ft_isalnum	Harf veya rakam mı?
+ft_isascii	ASCII mi? (0-127)
+ft_isprint	Yazdırılabilir mi?
+ft_toupper	Harfi büyüt
+ft_tolower	Harfi küçült
+
+🗒️ Toplam: 7 Fonksiyon
+Başlamadan önce ctype.h fonksiyonlarını man sayfalarından incele.
+
+📌 2. Basit String ve Bellek Fonksiyonları (Orta Seviye)
+Burada artık string uzunluğu, bellek kopyalama gibi temel işlemleri öğreniyorsun:
+
+Fonksiyonlar	Açıklama
+ft_strlen	String uzunluğu
+ft_memset	Belleği doldur
+ft_bzero	Belleği sıfırla
+ft_memcpy	Bellek kopyala (overlap yok)
+ft_memmove	Bellek kopyala (overlap var)
+ft_strlcpy	String kopyala (limitli)
+ft_strlcat	String birleştir (limitli)
+
+🗒️ Bu kısımda pointer mantığını anlamaya çalış!
+
+📌 3. String Arama & Karşılaştırma Fonksiyonları (Biraz Daha Zor)
+Fonksiyonlar	Açıklama
+ft_strchr	String'te karakter bul (ilk)
+ft_strrchr	String'te karakter bul (son)
+ft_strncmp	String karşılaştır
+ft_memchr	Bellekte karakter bul
+ft_memcmp	Bellek karşılaştır
+ft_strnstr	String içinde string bul
+
+📌 4. Diğerleri – Temel Kapatıcılar
+Fonksiyonlar	Açıklama
+ft_atoi	String'i int'e çevir
+ft_calloc	Bellekten sıfırlanmış alan ayır
+ft_strdup	String kopyala (malloc'lu)
+
+📌 5. Part 2 – String Manipülasyon (Biraz Zorlaşıyor)
+Bunlar genelde malloc'lu fonksiyonlar. Sabırlı ol:
+
+Fonksiyonlar	Açıklama
+ft_substr	String'in alt parçasını al
+ft_strjoin	String birleştir
+ft_strtrim	Baş/son karakterleri kırp
+ft_split	String'i delimiter'a göre böl (zor!)
+ft_itoa	Int'i string'e çevir
+ft_strmapi	Fonksiyonu her karaktere uygula, yeni string
+ft_striteri	Fonksiyonu her karaktere uygula (in-place)
+
+📌 6. Part 2 – File Descriptor Fonksiyonları (Kolay Kapanış)
+Fonksiyonlar	Açıklama
+ft_putchar_fd	Karakteri fd'ye yaz
+ft_putstr_fd	String'i fd'ye yaz
+ft_putendl_fd	String + newline'u fd'ye yaz
+ft_putnbr_fd	Sayıyı fd'ye yaz
